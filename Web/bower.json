@@ -1,0 +1,17 @@
+{
+  "name": "todo_list",
+  "description": "A program to track various todo items",
+  "main": "index.js",
+  "authors": [
+    "Paul Wilson <paul.l.wilson3@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

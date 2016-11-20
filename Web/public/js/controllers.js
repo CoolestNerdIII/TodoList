@@ -169,7 +169,6 @@ angular.module('todolist.controllers', [])
     };
 
     List.query(function (resp) {
-      console.log(resp);
       $scope.lists = resp;
       $scope.lists.forEach(function (list) {
         if (list.archived) {

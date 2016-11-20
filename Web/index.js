@@ -41,3 +41,7 @@ require('./app/routes')(app, passport); // load our routes and pass in our fully
 // app.listen(port);
 server.listen(port);
 console.log("App listening on port 8080");
+
+// Generate random list
+// var generateList = require('./app/management/generateList');
+// generateList();

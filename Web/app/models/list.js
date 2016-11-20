@@ -8,7 +8,7 @@ var listSchema = mongoose.Schema({
   created: {type: Date, default: Date.now},
   archived: {type: Boolean, default: false},
   priority: {type: Number, min: 0, max: 10, default: 5},
-  backgroundColor: String,
+  backgroundColor: String
 });
 
 // Methods

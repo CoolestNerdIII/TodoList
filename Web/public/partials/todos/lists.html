@@ -68,7 +68,7 @@
                             <div class="table-responsive">
                                 <table class="table table-hover">
                                     <tbody>
-                                    <tr ng-repeat="item in list.items" ng-click="setClickedRow($index, item)">
+                                    <tr ng-repeat="item in list.items" ng-click="setClickedRow($index, item)" ng-class="getClass(item)">
                                         <td class="col-md-1">
                                             <label>
                                                 <input type="checkbox" ng-click="toggleCompletion($event, item)"

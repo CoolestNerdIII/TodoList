@@ -1,4 +1,25 @@
 angular.module('todolist.controllers', [])
+  .controller('ParentCtrl', ['$scope', '$uibModal', 'List', function ($scope, $uibModal, List) {
+    $scope.newList = function () {
+      var modalInstance = $uibModal.open({
+        animation: true,
+        templateUrl: 'partials/modals/new-list-modal.html',
+        controller: 'BasicModalCtrl',
+        size: 'lg'
+      });
+
+      modalInstance.result.then(function (resp) {
+        if (resp) {
+          var list = new List(resp);
+          list.$save(function (resp) {
+            console.log(resp);
+          }, function (err) {
+            console.error(err);
+          })
+        }
+      });
+    }
+  }])
   .controller('ListCtrl', ['$scope', 'List', 'Item', '$uibModal', 'ngNotify', function ($scope, List, Item, $uibModal, ngNotify) {
 
     $scope.lists = [];
@@ -68,6 +89,20 @@ angular.module('todolist.controllers', [])
       }, function (err) {
         console.error(err);
       })
+    };
+
+    $scope.getClass = function (item) {
+      var today = new Date();
+      if (item.isComplete || !item.dueDate) {
+        return '';
+      } else if (item.dueDate < new Date()) {
+        return 'danger';
+      }
+      // else if (item.dueDate < new Date().setDate(today.getDate()-30)) {
+      //   return 'warning';
+      // }
+
+      return '';
     };
 
     List.query(function (resp) {

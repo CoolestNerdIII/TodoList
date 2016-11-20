@@ -47,7 +47,8 @@ angular.module('todolist', deps)
     // Public Routes
       .state('public', {
         abstract: true,
-        templateUrl: 'partials/common/content.html'
+        templateUrl: 'partials/common/content.html',
+        controller: 'ParentCtrl'
       })
       .state('public.lists', {
         url: '/',

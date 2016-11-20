@@ -240,8 +240,8 @@ module.exports = function (app, passport) {
         item.text = req.body.text;
         item.isComplete = req.body.isComplete;
         item.priority = req.body.priority;
-        item.dueDate = req.body.dueDate;
-        item.reminderDate = req.body.reminderDate;
+        item.dueDate = new Date(req.body.dueDate);
+        item.reminderDate = new Date(req.body.reminderDate);
         item.notes = req.body.notes;
         item.text = req.body.text;
 

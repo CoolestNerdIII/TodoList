@@ -2,9 +2,15 @@ angular.module('todolist.controllers', [])
   .controller('ListCtrl', ['$scope', 'List', 'Item', '$uibModal', 'ngNotify', function ($scope, List, Item, $uibModal, ngNotify) {
 
     $scope.lists = [];
+    $scope.newItem = '';
 
-    $scope.openItem = function (item) {
-      console.log(item);
+    $scope.addItem = function (item, list_id, list_index) {
+      var newItem = new Item({text:item, list: list_id});
+      newItem.$save(function (resp) {
+        $scope.lists[list_index].items.push(resp);
+      }, function (err) {
+        console.error(err);
+      });
     };
 
     $scope.setClickedRow = function(index, item){  //function that sets the value of selectedRow to current index

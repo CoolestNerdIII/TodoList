@@ -185,10 +185,11 @@ module.exports = function (app, passport) {
   // Create a new item
     .post(function (req, res) {
       Item.create({
-        name: req.body.name,
+        text: req.body.text,
         description: req.body.description,
         priority: req.body.priority,
-        backgroundColor: req.body.backgroundColor
+        backgroundColor: req.body.backgroundColor,
+        list: req.body.list
 
       }, function (err, item) {
         if (err) {

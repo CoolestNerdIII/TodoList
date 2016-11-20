@@ -77,10 +77,21 @@
                                         </td>
                                         <td class="done-{{item.isComplete}}">{{item.text}}</td>
                                         <td class="col-md-1">
-                                            <button type="button" class="btn btn-danger btn-xs" ng-click="removeItem($event, item, $parent.$index, $index)">
+                                            <button type="button" class="btn btn-danger btn-xs"
+                                                    ng-click="removeItem($event, item, $parent.$index, $index)">
                                                 <i class="fa fa-times"></i>
                                             </button>
                                         </td>
+                                    </tr>
+                                    <tr>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="text" ng-model="newItem">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-success" type="submit" ng-click="addItem(newItem, list._id, $index)">Add</button>
+                                                </span>
+                                            </div>
+                                        </div>
                                     </tr>
                                     </tbody>
                                 </table>

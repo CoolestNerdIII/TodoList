@@ -8,7 +8,7 @@
 - [x] Add new todo list
 - [x] Remove a todo list
 - [x] Edit a todo list
-- [ ] Email Notifications
+- [x] Email Notifications
 - [ ] Docker implementation
 - [ ] Testing Framework
 - [ ] Implement socket.io

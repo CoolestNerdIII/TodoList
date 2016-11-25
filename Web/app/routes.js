@@ -6,6 +6,8 @@ var listViewModel = require('./viewModels/list');
 var listsViewModel = require('./viewModels/lists');
 var User = require('./models/user');
 var jwt = require('express-jwt');
+var updateNotification = require('./management/updateNotification');
+var deleteNotification = require('./management/deleteNotification');
 
 var auth = jwt({
   secret: require('../config/auth').randomSecret,
@@ -196,6 +198,7 @@ module.exports = function (app, passport) {
           res.send(err);
         }
 
+        updateNotification(item._id);
         res.json(item);
       });
     })
@@ -251,6 +254,8 @@ module.exports = function (app, passport) {
             console.error(err);
             res.send(err);
           } else {
+            // Update the notification
+            updateNotification(item._id);
             // Send back the updated item
             res.json(item);
           }
@@ -265,6 +270,7 @@ module.exports = function (app, passport) {
         if (err) {
           res.send(err);
         }
+        deleteNotification(req.params.item_id);
         res.json({message: 'Successfully deleted' });
       });
     });
@@ -289,4 +295,4 @@ module.exports = function (app, passport) {
     res.redirect('/');
   }
 
-}
+};

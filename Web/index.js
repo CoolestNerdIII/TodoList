@@ -46,17 +46,3 @@ require('./app/routes')(app, passport); // load our routes and pass in our fully
 // app.listen(port);
 server.listen(port);
 console.log("App listening on port 8080");
-
-// Generate random list
-// var generateList = require('./app/management/generateList');
-// generateList();
-
-// var Item = require('./app/models/item');
-// var sendEmailUpdate = require('./app/management/sendEmailUpdate');
-// Item.findOne({}, function (err, item) {
-//   if (err) {
-//     console.error('Error finding item ' + err);
-//   } else {
-//     sendEmailUpdate(item._id);
-//   }
-// });

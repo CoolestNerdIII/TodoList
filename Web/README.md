@@ -11,3 +11,4 @@
 - [ ] Email Notifications
 - [ ] Docker implementation
 - [ ] Testing Framework
+- [ ] Implement socket.io

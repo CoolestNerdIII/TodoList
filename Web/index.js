@@ -28,7 +28,12 @@ app.use(methodOverride());
 app.set('view engine', 'ejs'); // set up ejs for templating
 
 // required for passport
-app.use(session({secret: 'ilovescotchscotchyscotchscotch'}));  // session secret
+app.use(session({
+  secret: 'ilovescotchscotchyscotchscotch',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}));
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
@@ -45,3 +50,13 @@ console.log("App listening on port 8080");
 // Generate random list
 // var generateList = require('./app/management/generateList');
 // generateList();
+
+// var Item = require('./app/models/item');
+// var sendEmailUpdate = require('./app/management/sendEmailUpdate');
+// Item.findOne({}, function (err, item) {
+//   if (err) {
+//     console.error('Error finding item ' + err);
+//   } else {
+//     sendEmailUpdate(item._id);
+//   }
+// });

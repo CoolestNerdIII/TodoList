@@ -4,7 +4,7 @@
   "description": "A program to track various todo items",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -25,6 +25,7 @@
     "mongoose": "^4.4.16",
     "morgan": "^1.7.0",
     "node-schedule": "^1.2.0",
+    "nodemon": "^1.11.0",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.0",
     "passport-google-oauth": "^1.0.0",

@@ -1,15 +1,15 @@
 FROM node:argon
 
 # Create app directory
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+RUN mkdir -p /app
+WORKDIR /app
 
 # Install app dependencies
-COPY package.json /usr/src/app/
+COPY package.json /app
 RUN npm install
 
 # Bundle app source
-COPY . /usr/src/app
+COPY . /app
 
 ENV NODE_ENV development # production for staging
 EXPOSE 8080

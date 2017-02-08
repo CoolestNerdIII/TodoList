@@ -1,6 +1,13 @@
 version: "2"
 services:
-  web:
+  nginx:
+    restart: always
+    build: ./nginx
+    links:
+      - node1:node1
+    ports:
+      - "80:80"
+  node1:
     build: .
     volumes:
       - ./:/app
